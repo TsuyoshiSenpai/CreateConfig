@@ -3,6 +3,7 @@
 #include "ui_mainwindow.h"
 
 #include <QFileDialog>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -56,6 +57,9 @@ void MainWindow::pathToXMLButtonClicked()
 void MainWindow::generateXMLButtonClicked()
 {
     HeaderParser parser(pathToHeader, pathToXML);
+    QMessageBox msgBox;
+    msgBox.setText("Файл сгенерирован!");
+    msgBox.exec();
 }
 
 void MainWindow::getStatus()
